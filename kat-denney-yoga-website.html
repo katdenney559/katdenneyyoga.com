@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kat Denney Yoga | Power Yoga & Sculpt</title>
+<meta name="description" content="Kat Denney Yoga — Power Yoga, Sculpt, strength, confidence and connection on and off the mat.">
+<style>
+:root{
+  --ink:#24332f; --sage:#82988c; --sand:#f4eee5; --cream:#fbfaf7;
+  --terracotta:#b87861; --white:#fff;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--cream);line-height:1.6}
+nav{position:fixed;top:0;width:100%;z-index:10;background:rgba(251,250,247,.94);backdrop-filter:blur(10px);display:flex;justify-content:space-between;align-items:center;padding:18px 6%;border-bottom:1px solid #e9e4dc}
+.logo{font-weight:700;letter-spacing:1px;font-size:18px}
+nav a{color:var(--ink);text-decoration:none;margin-left:26px;font-size:14px}
+.hero{min-height:100vh;padding:150px 7% 90px;display:flex;align-items:center;background:linear-gradient(135deg,var(--sand),#e8eee9)}
+.hero-inner{max-width:1050px}
+.kicker{text-transform:uppercase;letter-spacing:3px;font-size:13px;color:var(--terracotta);font-weight:700}
+h1{font-family:Georgia,serif;font-size:clamp(55px,9vw,105px);line-height:.95;margin:18px 0 28px;font-weight:500}
+.hero p{font-size:21px;max-width:650px}
+.btn{display:inline-block;margin-top:22px;background:var(--ink);color:white;padding:14px 25px;text-decoration:none;border-radius:999px;font-weight:700}
+section{padding:95px 7%}
+.section-title{font-family:Georgia,serif;font-size:48px;font-weight:500;margin:0 0 18px}
+.intro{max-width:700px;font-size:19px}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.photo{min-height:480px;border-radius:4px;background:linear-gradient(160deg,#cbd8d0,#a7b9ad 45%,#d9c8b6);display:flex;align-items:end;padding:28px;color:white;font-family:Georgia,serif;font-size:25px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px}
+.card{background:white;padding:34px;border:1px solid #e7e1d9}
+.card h3{font-family:Georgia,serif;font-size:28px;font-weight:500;margin-top:0}
+.card p{color:#53615c}
+.schedule{background:var(--sage);color:white}
+.schedule .intro{color:#f5f7f5}
+.schedule-box{background:rgba(255,255,255,.13);padding:30px;margin-top:35px;max-width:850px}
+.row{display:flex;justify-content:space-between;padding:17px 0;border-bottom:1px solid rgba(255,255,255,.3)}
+.row:last-child{border-bottom:0}
+.cta{text-align:center;background:var(--sand)}
+.cta p{max-width:650px;margin:0 auto}
+footer{padding:35px 7%;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:14px}
+footer a{color:var(--ink)}
+@media(max-width:750px){
+ nav{padding:15px 5%} nav div:last-child{display:none}
+ section{padding:70px 6%}
+ .about{grid-template-columns:1fr;gap:35px}
+ .photo{min-height:330px}
+ .cards{grid-template-columns:1fr}
+ .row{gap:20px;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo">KAT DENNEY YOGA</div>
+  <div>
+    <a href="#about">About</a>
+    <a href="#classes">Classes</a>
+    <a href="#schedule">Schedule</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="kicker">Power Yoga • Sculpt • Strength</div>
+    <h1>Find your<br>strong.</h1>
+    <p>A space to move with intention, build strength, and reconnect with yourself — on and off the mat.</p>
+    <a class="btn" href="#classes">Explore Classes</a>
+  </div>
+</header>
+
+<section id="about">
+  <div class="about">
+    <div class="photo">Your favorite place to move, breathe & become.</div>
+    <div>
+      <div class="kicker">Meet Kat</div>
+      <h2 class="section-title">Yoga that makes you feel strong.</h2>
+      <p class="intro">I'm Kat, a 200-hour certified Power Yoga and Sculpt instructor with a Bachelor of Science in Health Education. I started teaching in 2023 and love creating classes that challenge you, energize you, and remind you just how capable you are.</p>
+      <p class="intro">My goal is simple: build strength, confidence, and connection — on and off the mat.</p>
+    </div>
+  </div>
+</section>
+
+<section id="classes">
+  <div class="kicker">Move with me</div>
+  <h2 class="section-title">Classes</h2>
+  <p class="intro">Come as you are. Leave feeling stronger, more grounded, and a little more connected to yourself.</p>
+  <div class="cards">
+    <article class="card">
+      <h3>Hot Power Yoga</h3>
+      <p>A dynamic, heated flow designed to build strength, mobility, balance, and mental focus.</p>
+    </article>
+    <article class="card">
+      <h3>Yoga Sculpt</h3>
+      <p>Yoga meets strength training. Expect movement, weights, music, sweat, and a whole lot of energy.</p>
+    </article>
+    <article class="card">
+      <h3>Private Sessions</h3>
+      <p>Personalized movement and guidance designed around your goals, experience, and body.</p>
+    </article>
+  </div>
+</section>
+
+<section id="schedule" class="schedule">
+  <div class="kicker">Come practice</div>
+  <h2 class="section-title">Weekly Schedule</h2>
+  <p class="intro">Find Kat teaching at studios throughout the Seacoast.</p>
+  <div class="schedule-box">
+    <div class="row"><strong>MONDAY</strong><span>6:00 PM · Prasada Yoga · North Hampton<br><a style="color:white" href="https://prasadayoga.heymarvelous.com/calendar" target="_blank" rel="noopener">Book at Prasada Yoga →</a></span></div>
+    <div class="row"><strong>TUESDAY</strong><span>5:30 PM · Align Step + Strength · Newburyport<br><a style="color:white" href="https://www.alignstrength.com/classes" target="_blank" rel="noopener">Book at Align →</a></span></div>
+    <div class="row"><strong>WEDNESDAY</strong><span>8:15 AM · Align Step + Strength · Newburyport<br><a style="color:white" href="https://www.alignstrength.com/classes" target="_blank" rel="noopener">Book at Align →</a></span></div>
+    <div class="row"><strong>WEDNESDAY</strong><span>12:00 PM · The Yoga Parlor · Hampton<br><a style="color:white" href="https://theyogaparlornh.com/schedule" target="_blank" rel="noopener">Book at The Yoga Parlor →</a></span></div>
+    <div class="row"><strong>WEDNESDAY</strong><span>5:30 PM · Align Step + Strength · Newburyport<br><a style="color:white" href="https://www.alignstrength.com/classes" target="_blank" rel="noopener">Book at Align →</a></span></div>
+    <div class="row"><strong>THURSDAY</strong><span>9:30 AM · Align Step + Strength · Newburyport<br><a style="color:white" href="https://www.alignstrength.com/classes" target="_blank" rel="noopener">Book at Align →</a></span></div>
+    <div class="row"><strong>THURSDAY</strong><span>5:30 PM · The Yoga Parlor · Hampton<br><a style="color:white" href="https://theyogaparlornh.com/schedule" target="_blank" rel="noopener">Book at The Yoga Parlor →</a></span></div>
+    <div class="row"><strong>FRIDAY</strong><span>6:00 AM · The Yoga Parlor · Hampton<br><a style="color:white" href="https://theyogaparlornh.com/schedule" target="_blank" rel="noopener">Book at The Yoga Parlor →</a></span></div>
+    <div class="row"><strong>SATURDAY</strong><span>10:30 AM · Align Step + Strength · Newburyport<br><a style="color:white" href="https://www.alignstrength.com/classes" target="_blank" rel="noopener">Book at Align →</a></span></div>
+    <div class="row"><strong>SUNDAY</strong><span>8:30 AM · The Yoga Parlor · Hampton<br><a style="color:white" href="https://theyogaparlornh.com/schedule" target="_blank" rel="noopener">Book at The Yoga Parlor →</a></span></div>
+    <div class="row"><strong>SUNDAY</strong><span>9:30 AM · The Yoga Parlor · Hampton<br><a style="color:white" href="https://theyogaparlornh.com/schedule" target="_blank" rel="noopener">Book at The Yoga Parlor →</a></span></div>
+  </div>
+</section>
+
+<section id="contact" class="cta">
+  <div class="kicker">Let's connect</div>
+  <h2 class="section-title">Take it off the mat.</h2>
+  <p class="intro">For private sessions, events, collaborations, or just to say hello, I'd love to hear from you.</p>
+  <a class="btn" href="mailto:katdenney559@gmail.com">Get in Touch</a>
+</section>
+
+<footer>
+  <div>© 2026 Kat Denney Yoga</div>
+  <div><a href="https://www.instagram.com/y0gakat" target="_blank" rel="noopener">Instagram @y0gakat</a> &nbsp; • &nbsp; <a href="mailto:katdenney559@gmail.com">katdenney559@gmail.com</a></div>
+</footer>
+</body>
+</html>
