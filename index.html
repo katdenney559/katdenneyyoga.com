@@ -142,16 +142,44 @@ footer a{color:var(--ink)}
 
 <section id="reviews" class="cta" style="background:#f4eee5">
   <div class="kicker">Kind words</div>
-  <h2 class="section-title">Leave a Review</h2>
-  <p class="intro">Practiced with me? I’d love to hear about your experience. Your feedback means so much and helps others know what to expect when they step onto the mat.</p>
-  <form onsubmit="event.preventDefault(); const n=this.name.value.trim(); const r=this.review.value.trim(); if(!r) return; window.location.href='mailto:katdenneyyoga@gmail.com?subject='+encodeURIComponent('Yoga Review'+(n?' from '+n:''))+'&body='+encodeURIComponent(r);" style="max-width:650px;margin:28px auto 0;text-align:left">
-    <label for="review-name" style="display:block;margin-bottom:8px;font-weight:600">Name <span style="font-weight:400">(optional)</span></label>
-    <input id="review-name" name="name" type="text" placeholder="Your name" style="width:100%;padding:14px;border:1px solid #c9c9c2;border-radius:10px;background:white;font:inherit;margin-bottom:18px;box-sizing:border-box">
-    <label for="review-text" style="display:block;margin-bottom:8px;font-weight:600">Your review</label>
-    <textarea id="review-text" name="review" required rows="6" placeholder="Share your experience…" style="width:100%;padding:14px;border:1px solid #c9c9c2;border-radius:10px;background:white;font:inherit;resize:vertical;box-sizing:border-box"></textarea>
-    <div style="text-align:center;margin-top:18px"><button class="btn" type="submit" style="cursor:pointer;border:0">Send Review →</button></div>
-  </form>
+  <h2 class="section-title">What Students Are Saying</h2>
+  <p class="intro">A little love from the people who move, breathe, and get stronger with me.</p>
+
+  <div id="public-reviews" class="grid" style="margin-top:30px"></div>
+  <p id="no-reviews" class="intro" style="display:none;margin-top:24px">Be the first to leave a little love 🤍</p>
+
+  <div style="max-width:650px;margin:48px auto 0;padding-top:36px;border-top:1px solid #d8d0c5">
+    <div class="kicker">Share your experience</div>
+    <h3 style="font-size:clamp(28px,4vw,42px);margin:8px 0 10px">Leave a Review</h3>
+    <p class="intro">Your review will be sent to Kat first and will only appear here after approval.</p>
+    <form id="review-form" action="https://formspree.io/f/xnpnowqp" method="POST" style="margin:28px auto 0;text-align:left">
+      <input type="hidden" name="_subject" value="New Kat Denney Yoga Review">
+      <label for="review-name" style="display:block;margin-bottom:8px;font-weight:600">Name <span style="font-weight:400">(optional)</span></label>
+      <input id="review-name" name="name" type="text" placeholder="Your name" style="width:100%;padding:14px;border:1px solid #c9c9c2;border-radius:10px;background:white;font:inherit;margin-bottom:18px;box-sizing:border-box">
+      <label for="review-text" style="display:block;margin-bottom:8px;font-weight:600">Your review</label>
+      <textarea id="review-text" name="review" required rows="6" placeholder="Share your experience…" style="width:100%;padding:14px;border:1px solid #c9c9c2;border-radius:10px;background:white;font:inherit;resize:vertical;box-sizing:border-box"></textarea>
+      <div style="text-align:center;margin-top:18px"><button class="btn" type="submit" style="cursor:pointer;border:0">Submit Review →</button></div>
+    </form>
+  </div>
 </section>
+
+<script>
+fetch('reviews.json', {cache:'no-store'})
+  .then(r => r.ok ? r.json() : [])
+  .then(reviews => {
+    const box = document.getElementById('public-reviews');
+    const empty = document.getElementById('no-reviews');
+    if (!Array.isArray(reviews) || reviews.length === 0) { empty.style.display='block'; return; }
+    reviews.filter(x => x.approved === true).forEach(x => {
+      const card=document.createElement('article'); card.className='card';
+      const quote=document.createElement('p'); quote.textContent='“'+x.review+'”';
+      const name=document.createElement('strong'); name.textContent=x.name ? '— '+x.name : '— Anonymous';
+      card.append(quote,name); box.appendChild(card);
+    });
+    if (!box.children.length) empty.style.display='block';
+  })
+  .catch(() => document.getElementById('no-reviews').style.display='block');
+</script>
 
 <section id="contact" class="cta">
   <div class="kicker">Let's connect</div>
@@ -166,5 +194,3 @@ footer a{color:var(--ink)}
 </footer>
 </body>
 </html>
-index.html
-Displaying index.html.
