@@ -1,3 +1,24 @@
+None selected 
+
+Skip to content
+Using Gmail with screen readers
+Enable desktop notifications for Gmail.
+   OK  No thanks
+1 of 31,954
+(no subject)
+Inbox
+
+Kat Misserville
+Attachments
+4:23 PM (3 minutes ago)
+to me
+
+
+
+
+Sent from my iPhone
+ One attachment
+  •  Scanned by Gmail
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -67,8 +88,10 @@ footer a{color:var(--ink)}
     <a href="#about">About</a>
     <a href="#classes">Classes</a>
     <a href="#schedule">Schedule</a>
+    <a href="#events">Events</a>
     <a href="https://www.patreon.com/KatDenneyYoga?utm_campaign=creatorshare_creator" target="_blank" rel="noopener">Patreon</a>
-    <a href="#contact">Contact</a>
+    <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
   </div>
 </nav>
 
@@ -128,11 +151,27 @@ footer a{color:var(--ink)}
   </div>
 </section>
 
+
+
 <section class="cta" style="background:#e8eee9">
   <div class="kicker">Practice with Kat</div>
   <h2 class="section-title">Take class with me anytime.</h2>
   <p class="intro">Head to my Patreon for Vinyasa Flow + Sculpt sequences crafted around the music, plus fresh class inspiration and movement you can come back to anytime.</p>
   <a class="btn" href="https://www.patreon.com/KatDenneyYoga?utm_campaign=creatorshare_creator" target="_blank" rel="noopener">Join me on Patreon →</a>
+</section>
+
+
+<section id="reviews" class="cta" style="background:#f4eee5">
+  <div class="kicker">Kind words</div>
+  <h2 class="section-title">Leave a Review</h2>
+  <p class="intro">Practiced with me? I’d love to hear about your experience. Your feedback means so much and helps others know what to expect when they step onto the mat.</p>
+  <form onsubmit="event.preventDefault(); const n=this.name.value.trim(); const r=this.review.value.trim(); if(!r) return; window.location.href='mailto:katdenneyyoga@gmail.com?subject='+encodeURIComponent('Yoga Review'+(n?' from '+n:''))+'&body='+encodeURIComponent(r);" style="max-width:650px;margin:28px auto 0;text-align:left">
+    <label for="review-name" style="display:block;margin-bottom:8px;font-weight:600">Name <span style="font-weight:400">(optional)</span></label>
+    <input id="review-name" name="name" type="text" placeholder="Your name" style="width:100%;padding:14px;border:1px solid #c9c9c2;border-radius:10px;background:white;font:inherit;margin-bottom:18px;box-sizing:border-box">
+    <label for="review-text" style="display:block;margin-bottom:8px;font-weight:600">Your review</label>
+    <textarea id="review-text" name="review" required rows="6" placeholder="Share your experience…" style="width:100%;padding:14px;border:1px solid #c9c9c2;border-radius:10px;background:white;font:inherit;resize:vertical;box-sizing:border-box"></textarea>
+    <div style="text-align:center;margin-top:18px"><button class="btn" type="submit" style="cursor:pointer;border:0">Send Review →</button></div>
+  </form>
 </section>
 
 <section id="contact" class="cta">
@@ -148,3 +187,5 @@ footer a{color:var(--ink)}
 </footer>
 </body>
 </html>
+index.html
+Displaying index.html.
