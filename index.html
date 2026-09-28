@@ -33,6 +33,22 @@ section{padding:95px 7%}
 .card{background:white;padding:34px;border:1px solid #e7e1d9}
 .card h3{font-family:Georgia,serif;font-size:28px;font-weight:500;margin-top:0}
 .card p{color:#53615c}
+
+/* Horizontal review carousel */
+.reviews-scroll-container{
+  display:flex;
+  gap:22px;
+  overflow-x:auto;
+  padding:4px 2px 20px;
+  scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:thin;
+  text-align:left;
+}
+.reviews-scroll-container .card{
+  flex:0 0 min(380px, 82vw);
+  scroll-snap-align:start;
+}
 .schedule{background:var(--sage);color:white}
 .schedule .intro{color:#f5f7f5}
 .schedule-box{background:rgba(255,255,255,.13);padding:30px;margin-top:35px;max-width:850px}
