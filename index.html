@@ -180,21 +180,44 @@ footer a{color:var(--ink)}
 </section>
 
 <script>
-fetch('reviews.json', {cache:'no-store'})
+fetch('reviews.json', { cache: 'no-store' })
   .then(r => r.ok ? r.json() : [])
   .then(reviews => {
     const box = document.getElementById('public-reviews');
     const empty = document.getElementById('no-reviews');
-    if (!Array.isArray(reviews) || reviews.length === 0) { empty.style.display='block'; return; }
-    reviews.filter(x => x.approved === true).forEach(x => {
-      const card=document.createElement('article'); card.className='card';
-      const quote=document.createElement('p'); quote.textContent='“'+x.review+'”';
-      const name=document.createElement('strong'); name.textContent=x.name ? '— '+x.name : '— Anonymous';
-      card.append(quote,name); box.appendChild(card);
-    });
-    if (!box.children.length) empty.style.display='block';
+
+    // If no reviews or invalid data
+    if (!Array.isArray(reviews) || reviews.length === 0) {
+      empty.style.display = 'block';
+      return;
+    }
+
+    reviews
+      .filter(x => x.approved === true)
+      .forEach(x => {
+        const card = document.createElement('article');
+        card.className = 'card';
+
+        const quote = document.createElement('p');
+        // Replace \n with <br> for HTML line breaks
+        const safeReview = String(x.review || '')
+          .replace(/&/g, "&amp;")   // escape HTML special chars
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/\n/g, "<br>");
+        quote.innerHTML = '“' + safeReview + '”';
+
+        const name = document.createElement('strong');
+        name.textContent = x.name ? '— ' + x.name : '— Anonymous';
+
+        card.append(quote, name);
+        box.appendChild(card);
+      });
+
+    // If no approved reviews were added
+    if (!box.children.length) empty.style.display = 'block';
   })
-  .catch(() => document.getElementById('no-reviews').style.display='block');
+  .catch(() => document.getElementById('no-reviews').style.display = 'block');
 </script>
 
 <section id="contact" class="cta">
